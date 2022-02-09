@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('./Roboto-Medium.ttf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
 .hello {
     color: red;
+    font-family: 'Roboto-Medium';
+    font-size: 50pt;
+    background: url('./bg.png');
 }
