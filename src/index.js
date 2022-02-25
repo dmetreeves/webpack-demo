@@ -1,12 +1,22 @@
-async function getComponent() {
-    const element = document.createElement('div');
-    const { default: _ } = await import('lodash');
-    const { default: Print } = await import('./print');
-    element.innerHTML = _.join(['hello', 'webpack'], ' ');
-    element.onclick = Print.bind(null, 'Hello webpack!');
-    return element;
+import _ from 'lodash';
+import numRef from './ref.json';
+
+export function numToWord(num) {
+    return _.reduce(
+        numRef,
+        (prev, curr) => {
+            return curr.num === num ? ref.word : prev;
+        },
+        ''
+    );
 }
 
-getComponent().then((component) => {
-    document.body.appendChild(component);
-});
+export function wordToNum(word) {
+    return _.reduce(
+        numRef,
+        (prev, curr) => {
+            return curr.word === word && word.toLowerCase() ? curr.num : prev;
+        },
+        -1
+    );
+}
